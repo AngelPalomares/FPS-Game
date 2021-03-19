@@ -63,4 +63,18 @@ public class PlayerHealthController : MonoBehaviour
 
     }
 
+    public void HealPlayer(int healamount)
+    {
+        CurrentHealth += healamount;
+
+        if(CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+
+        UIController.instance.healthSlider.value = CurrentHealth;
+        UIController.instance.healthText.text = "HEALTH: " + CurrentHealth + "/" + MaxHealth;
+
+    }
+
 }

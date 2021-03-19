@@ -58,15 +58,17 @@
     <Compile Include="Assets\FPS Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\EnemyHealthController.cs" />
     <Compile Include="Assets\Scripts\TargetMovement.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraTesting.cs" />
     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\Testing.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\UIController.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\CheckPointController.cs" />
+    <Compile Include="Assets\Scripts\HealthPickup.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
