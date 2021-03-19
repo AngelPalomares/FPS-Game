@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource BulletSound,jumpingSound,walkingsound;
 
-    public GameObject MainGun;
-    public GameObject SecondGun;
+
+    public Gun activeGun;
 
     public int counter;
 
@@ -155,46 +155,29 @@ public class PlayerController : MonoBehaviour
                 FirePoint.LookAt(CameraTransform.position + (CameraTransform.forward * 30f));
             }
 
-            Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
+            //Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
+            FireShot();
         }
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             counter++;
-            Debug.Log("working"+ counter);
-            if (counter == 1)
-            {
-                Debug.Log(counter);
-                MainGun.SetActive(false);
-                SecondGun.SetActive(true);
-            }
-            else if (counter == 2)
-            {
-                counter = 0;
-                MainGun.SetActive(true);
-                SecondGun.SetActive(false);
-            }
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             counter--;
             Debug.Log("working" + counter);
-            if (counter == 0)
-            {
-                Debug.Log(counter);
-                MainGun.SetActive(false);
-                SecondGun.SetActive(true);
-            }
-            else if (counter == -1)
-            {
-                counter = 1;
-                MainGun.SetActive(true);
-                SecondGun.SetActive(false);
-            }
         }
 
         Anim.SetFloat("Speed", moveInput.magnitude);
         Anim.SetBool("onGround", canJump);
     }
+
+    public void FireShot()
+    {
+        Instantiate(activeGun.Bullet,FirePoint.position, FirePoint.rotation);
+    }
+
+
 }
