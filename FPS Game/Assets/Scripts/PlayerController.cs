@@ -141,7 +141,6 @@ public class PlayerController : MonoBehaviour
         //single shot
         if(Input.GetMouseButtonDown(0) && activeGun.FireCounter <= 0)
         {
-            BulletSound.Play();
             RaycastHit hit;
 
             if(Physics.Raycast(CameraTransform.position,CameraTransform.forward, out hit, 50f))
@@ -188,9 +187,14 @@ public class PlayerController : MonoBehaviour
 
     public void FireShot()
     {
-        Instantiate(activeGun.Bullet,FirePoint.position, FirePoint.rotation);
+        if (activeGun.CurrentAmmo > 0)
+        {
+            BulletSound.Play();
+            activeGun.CurrentAmmo--;
+            Instantiate(activeGun.Bullet, FirePoint.position, FirePoint.rotation);
 
-        activeGun.FireCounter = activeGun.FireRate;
+            activeGun.FireCounter = activeGun.FireRate;
+        }
     }
 
 

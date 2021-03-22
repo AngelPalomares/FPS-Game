@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
     public float FireCounter;
 
 
+    public int CurrentAmmo;
+
     // Start is called before the first frame update
     void Start()
     {
