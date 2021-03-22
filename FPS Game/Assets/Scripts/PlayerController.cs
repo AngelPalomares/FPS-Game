@@ -138,7 +138,8 @@ public class PlayerController : MonoBehaviour
 
 
         //Shooting Mechanics
-        if(Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Joystick1Button7))
+        //single shot
+        if(Input.GetMouseButtonDown(0) && activeGun.FireCounter <= 0)
         {
             BulletSound.Play();
             RaycastHit hit;
@@ -158,6 +159,9 @@ public class PlayerController : MonoBehaviour
             //Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
             FireShot();
         }
+
+
+        //repeats shots
 
         if(Input.GetMouseButton(0) && activeGun.CanAutoFire)
         {
