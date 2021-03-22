@@ -159,6 +159,14 @@ public class PlayerController : MonoBehaviour
             FireShot();
         }
 
+        if(Input.GetMouseButton(0) && activeGun.CanAutoFire)
+        {
+            if(activeGun.FireCounter <= 0)
+            {
+                FireShot();
+            }
+        }
+
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             counter++;
@@ -177,6 +185,8 @@ public class PlayerController : MonoBehaviour
     public void FireShot()
     {
         Instantiate(activeGun.Bullet,FirePoint.position, FirePoint.rotation);
+
+        activeGun.FireCounter = activeGun.FireRate;
     }
 
 

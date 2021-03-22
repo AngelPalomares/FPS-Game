@@ -6,6 +6,13 @@ public class Gun : MonoBehaviour
 {
     public GameObject Bullet;
 
+    public bool CanAutoFire;
+
+    public float FireRate;
+
+    [HideInInspector]
+    public float FireCounter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +23,9 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(FireCounter > 0)
+        {
+            FireCounter -= Time.deltaTime;
+        }
     }
 }
