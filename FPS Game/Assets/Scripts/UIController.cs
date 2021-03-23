@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
 
     public Text healthText;
 
+    public Text AmmoText;
+
     private void Awake()
     {
         instance = this;

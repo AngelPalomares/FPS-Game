@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
     }
 
     // Update is called once per frame
@@ -194,6 +195,7 @@ public class PlayerController : MonoBehaviour
             Instantiate(activeGun.Bullet, FirePoint.position, FirePoint.rotation);
 
             activeGun.FireCounter = activeGun.FireRate;
+            UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
         }
     }
 
