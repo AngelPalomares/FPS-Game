@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8115d171c5d480849b88265ecf207daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 807308041543697701, guid: 1bdffb096e6d2694d9234e0a9bf3ee76, type: 3}
+  Bullet: {fileID: 807308041543697701, guid: 37f7d360b5877144dbfb5cdb89092cd4, type: 3}
   CanAutoFire: 1
   FireRate: 0.1
   FireCounter: 0
@@ -4153,9 +4153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8115d171c5d480849b88265ecf207daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 807308041543697701, guid: 1bdffb096e6d2694d9234e0a9bf3ee76, type: 3}
+  Bullet: {fileID: 807308041543697701, guid: 1501995d109bae84c806068c658e42f0, type: 3}
   CanAutoFire: 1
-  FireRate: 1
+  FireRate: 2
   FireCounter: 0
   CurrentAmmo: 15
   pickupAmount: 5
