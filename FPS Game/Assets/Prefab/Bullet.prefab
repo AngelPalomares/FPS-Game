@@ -116,6 +116,8 @@ MonoBehaviour:
   Particles: {fileID: 6664931629431559283, guid: 6e4aea122f1bad541b3a0285766009eb, type: 3}
   damageEnemy: 1
   DamagePlayer: 0
+  Headshot: {fileID: 0}
+  damage: 3
 --- !u!54 &807308041543697706
 Rigidbody:
   m_ObjectHideFlags: 0

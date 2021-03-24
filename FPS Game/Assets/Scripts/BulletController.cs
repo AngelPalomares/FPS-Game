@@ -15,7 +15,7 @@ public class BulletController : MonoBehaviour
 
     public GameObject Headshot;
 
-    public int damage = 1;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class BulletController : MonoBehaviour
         if(collision.gameObject.tag == "Enemy" && damageEnemy)
         {
             //Destroy(collision.gameObject);
-            collision.gameObject.GetComponent<EnemyHealthController>().DamageEnemy();
+            collision.gameObject.GetComponent<EnemyHealthController>().DamageEnemy(damage);
         }
 
         if(collision.gameObject.tag == "Head")

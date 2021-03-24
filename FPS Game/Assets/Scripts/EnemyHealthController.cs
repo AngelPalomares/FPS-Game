@@ -21,9 +21,9 @@ public class EnemyHealthController : MonoBehaviour
        
     }
 
-    public void DamageEnemy()
+    public void DamageEnemy(int DamageAmount)
     {
-        currentHealth--;
+        currentHealth -= DamageAmount;
 
         if(currentHealth <= 0)
         {
