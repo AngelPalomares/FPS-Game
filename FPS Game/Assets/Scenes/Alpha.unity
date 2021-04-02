@@ -3647,13 +3647,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   Anim: {fileID: 1662492380}
-  Bullet: {fileID: 0}
   FirePoint: {fileID: 799836619}
   BulletSound: {fileID: 1622609907}
   jumpingSound: {fileID: 1074278801}
   walkingsound: {fileID: 1646611084}
-  activeGun: {fileID: 1746391516}
-  counter: 0
+  activeGun: {fileID: 128281723}
+  allguns:
+  - {fileID: 128281723}
+  - {fileID: 232103090}
+  - {fileID: 1746391516}
+  currentGun: 0
 --- !u!143 &1662492377
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4125,7 +4128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1746391515
 Transform:
   m_ObjectHideFlags: 0

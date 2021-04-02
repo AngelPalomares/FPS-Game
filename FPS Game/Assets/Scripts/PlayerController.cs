@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public Animator Anim;
 
     //gun COntrol
-    public GameObject Bullet;
+    //public GameObject Bullet;
     public Transform FirePoint;
 
     public AudioSource BulletSound,jumpingSound,walkingsound;
@@ -45,7 +46,9 @@ public class PlayerController : MonoBehaviour
 
     public Gun activeGun;
 
-    public int counter;
+    public List<Gun> allguns = new List<Gun>();
+
+    public int currentGun;
 
     private void Awake()
     {
@@ -55,7 +58,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        activeGun = allguns[currentGun];
+        activeGun.gameObject.SetActive(true);
         UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
     }
 
@@ -173,13 +177,12 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            counter++;
+            SwitchGun();
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            counter--;
-            Debug.Log("working" + counter);
+            ReverseSwitchGun();
         }
 
         Anim.SetFloat("Speed", moveInput.magnitude);
@@ -197,6 +200,39 @@ public class PlayerController : MonoBehaviour
             activeGun.FireCounter = activeGun.FireRate;
             UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
         }
+    }
+
+    public void SwitchGun()
+    {
+        activeGun.gameObject.SetActive(false);
+        currentGun++;
+
+        if(currentGun >= allguns.Count)
+        {
+            currentGun = 0;
+        }
+
+        activeGun = allguns[currentGun];
+        activeGun.gameObject.SetActive(true);
+
+        UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+    }
+
+    public void ReverseSwitchGun()
+    {
+        activeGun.gameObject.SetActive(false);
+        currentGun--;
+
+        if (currentGun <= -1)
+        {
+            currentGun = allguns.Count - 1;
+        }
+
+        activeGun = allguns[currentGun];
+        activeGun.gameObject.SetActive(true);
+
+        UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+
     }
 
 
