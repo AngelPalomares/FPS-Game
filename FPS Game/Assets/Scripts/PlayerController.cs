@@ -58,9 +58,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        activeGun = allguns[currentGun];
-        activeGun.gameObject.SetActive(true);
-        UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+        currentGun--;
+
+        SwitchGun();
+
     }
 
     // Update is called once per frame
@@ -216,6 +217,8 @@ public class PlayerController : MonoBehaviour
         activeGun.gameObject.SetActive(true);
 
         UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+
+        FirePoint.position = activeGun.FirePoint.position;
     }
 
     public void ReverseSwitchGun()
@@ -232,6 +235,8 @@ public class PlayerController : MonoBehaviour
         activeGun.gameObject.SetActive(true);
 
         UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+
+        FirePoint.position = activeGun.FirePoint.position;
 
     }
 
