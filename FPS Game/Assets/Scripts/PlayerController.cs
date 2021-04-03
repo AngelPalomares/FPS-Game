@@ -166,6 +166,8 @@ public class PlayerController : MonoBehaviour
         }
 
 
+
+
         //repeats shots
 
         if(Input.GetMouseButton(0) && activeGun.CanAutoFire)
@@ -184,6 +186,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             ReverseSwitchGun();
+        }
+
+        if(Input.GetMouseButton(1))
+        {
+            CameraController.instance.ZoomIn(activeGun.ZoomAmount);
+        }
+
+        if(Input.GetMouseButtonUp(1))
+        {
+            CameraController.instance.ZoomOut();
         }
 
         Anim.SetFloat("Speed", moveInput.magnitude);
