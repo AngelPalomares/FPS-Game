@@ -13,6 +13,14 @@ public class UIController : MonoBehaviour
 
     public Text AmmoText;
 
+    public Text Name;
+    public Text Message;
+
+    public GameObject Nameobject;
+    public GameObject MessageObject;
+
+    public GameObject TextToSetActive;
+
     private void Awake()
     {
         instance = this;
