@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    public static Gun instance;
+
     public GameObject Bullet;
 
     public bool CanAutoFire;
@@ -19,6 +22,17 @@ public class Gun : MonoBehaviour
     public Transform FirePoint;
 
     public float ZoomAmount;
+
+    public GameObject PistolCrosshair;
+
+    public GameObject MachineGunCrossHair;
+
+    public GameObject SniperCrossHair;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

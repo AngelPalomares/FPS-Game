@@ -231,6 +231,25 @@ public class PlayerController : MonoBehaviour
         UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
 
         FirePoint.position = activeGun.FirePoint.position;
+
+        if (currentGun == 0)
+        {
+            Gun.instance.PistolCrosshair.SetActive(true);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(false);
+        }
+        else if (currentGun == 1)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(true);
+            Gun.instance.SniperCrossHair.SetActive(false);
+        }
+        else if (currentGun == 2)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(true);
+        }
     }
 
     public void ReverseSwitchGun()
@@ -249,6 +268,25 @@ public class PlayerController : MonoBehaviour
         UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
 
         FirePoint.position = activeGun.FirePoint.position;
+
+        if (currentGun == 0)
+        {
+            Gun.instance.PistolCrosshair.SetActive(true);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(false);
+        }
+        else if (currentGun == 1)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(true);
+            Gun.instance.SniperCrossHair.SetActive(false);
+        }
+        else if (currentGun == 2)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(true);
+        }
 
     }
 
