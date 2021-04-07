@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class GameDialogue : MonoBehaviour
 {
-    public string NPC;
-    public string Message;
+    public static GameDialogue instance;
 
-    public string secondMessage;
+    public string[] lines;
 
-    public bool FisrtMission;
+    private bool canActivate;
 
-    public int next;
 
-    public int annoying;
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
 
     }
@@ -25,12 +25,9 @@ public class GameDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(canActivate && Input.GetKeyDown(KeyCode.E) && !DialogueManager.instance.DialogBox.activeInHierarchy)
         {
-            Debug.Log("first if statement");
-            UIController.instance.TextToSetActive.SetActive(false);
-
-            SwitchDialogue();
+            DialogueManager.instance.ShowDialog(lines);
         }
     }
 
@@ -38,49 +35,19 @@ public class GameDialogue : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            UIController.instance.TextToSetActive.SetActive(true);
+            DialogueManager.instance.Testing.SetActive(true);
+            canActivate = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        UIController.instance.TextToSetActive.SetActive(false);
-        UIController.instance.MessageObject.SetActive(false);
-        UIController.instance.Nameobject.SetActive(false);
-        next = 0;
-        annoying = 0;
+        if(other.tag == "Player")
+        {
+            DialogueManager.instance.Testing.SetActive(false);
+            canActivate = false;
+        }    
     }
 
-    public void SwitchDialogue()
-    {
-        next++;
-
-        if(next == 3)
-        {
-            next = 1;
-        }
-
-        if(next == 1)
-        {
-            annoying++;
-            UIController.instance.Name.text = "Miguel";
-            UIController.instance.Nameobject.SetActive(true);
-            UIController.instance.Message.text = "reading";
-            UIController.instance.MessageObject.SetActive(true);
-        }
-        else if(next == 2)
-        {
-            annoying++;
-            UIController.instance.Message.text = "still reading motherfucker";
-            UIController.instance.MessageObject.SetActive(true);
-        }
-
-        if(annoying == 8)
-        {
-            UIController.instance.Message.text = "Stop fucking around and continue playing the game";
-            next = 0;
-        }
-
-    }
 
 }
