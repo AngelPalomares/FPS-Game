@@ -41,7 +41,6 @@ public class DialogueManager : MonoBehaviour
                     currentLine++;
                     if (currentLine >= dialogLines.Length)
                     {
-                        Testing.SetActive(true);
                         DialogBox.SetActive(false);
                     }
                     else
