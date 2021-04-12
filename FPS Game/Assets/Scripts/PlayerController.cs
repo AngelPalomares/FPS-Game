@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public Gun activeGun;
 
     public List<Gun> allguns = new List<Gun>();
+    public List<Gun> unlockableGuns = new List<Gun>();
 
     public int currentGun;
 
@@ -301,6 +302,35 @@ public class PlayerController : MonoBehaviour
             Gun.instance.PistolCrosshair.SetActive(false);
             Gun.instance.MachineGunCrossHair.SetActive(false);
             Gun.instance.SniperCrossHair.SetActive(true);
+        }
+
+    }
+
+    public void AddGun(string guntoadd)
+    {
+        bool gunUnlocked = false;
+
+        if(unlockableGuns.Count > 0)
+        {
+            for(int i = 0; i < unlockableGuns.Count; i++)
+            {
+                if(unlockableGuns[i].GunName == guntoadd)
+                {
+                    gunUnlocked = true;
+
+                    allguns.Add(unlockableGuns[i]);
+
+                    unlockableGuns.RemoveAt(i);
+
+                    i = unlockableGuns.Count;
+                }
+            }
+        }
+
+        if(gunUnlocked)
+        {
+            currentGun = allguns.Count - 2;
+            SwitchGun();
         }
 
     }

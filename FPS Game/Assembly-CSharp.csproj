@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\TargetMovement.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\AmmoPickup.cs" />
+    <Compile Include="Assets\Scripts\DragObject.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraTesting.cs" />
     <Compile Include="Assets\Scripts\New Folder\CheckingSurroundings.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
-    <Compile Include="Assets\Scripts\DragObject.cs" />
+    <Compile Include="Assets\Scripts\WeaponPickup.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
