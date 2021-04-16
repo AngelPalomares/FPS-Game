@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 gunStartPOS;
     public float ADSSpeed = 2;
 
+    public GameObject MuzzleFlash;
+
     private void Awake()
     {
         instance = this;
@@ -149,6 +151,7 @@ public class PlayerController : MonoBehaviour
         //Moves the camera up and down
         CameraTransform.rotation = Quaternion.Euler(CameraTransform.rotation.eulerAngles + new Vector3(-MouseInput.y, 0f, 0f));
 
+        MuzzleFlash.SetActive(false);
 
         //Shooting Mechanics
         //single shot
@@ -228,6 +231,8 @@ public class PlayerController : MonoBehaviour
 
             activeGun.FireCounter = activeGun.FireRate;
             UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+
+            MuzzleFlash.SetActive(true);
         }
     }
 
