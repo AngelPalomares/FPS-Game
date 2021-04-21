@@ -2325,8 +2325,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - n-Michael
-  - it
-  - work
+  - Dialoge System
+  - Works
 --- !u!1 &793524566
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,7 +7115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - n-Angel
-  - Fuck Face
+  - Hello there
 --- !u!65 &2003409567
 BoxCollider:
   m_ObjectHideFlags: 0
