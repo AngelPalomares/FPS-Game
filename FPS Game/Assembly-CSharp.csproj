@@ -58,6 +58,7 @@
     <Compile Include="Assets\FPS Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\GameDialogue.cs" />
+    <Compile Include="Assets\Scripts\Screen.cs" />
     <Compile Include="Assets\Scripts\EnemyHealthController.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\TargetMovement.cs" />
@@ -77,7 +78,7 @@
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
-    <Compile Include="Assets\Scripts\Screen.cs" />
+    <Compile Include="Assets\Scripts\VictoryScreen.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
