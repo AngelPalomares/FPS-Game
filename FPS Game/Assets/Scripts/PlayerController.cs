@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -56,6 +57,8 @@ public class PlayerController : MonoBehaviour
     public float ADSSpeed = 2;
 
     public GameObject MuzzleFlash;
+
+    public bool Swingoff;
 
     private void Awake()
     {
@@ -217,6 +220,12 @@ public class PlayerController : MonoBehaviour
                 CameraController.instance.ZoomOut();
             }
 
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                Anim.SetBool("Fbutton", true);
+                StartCoroutine(MeleeCo());
+            }
+
             Anim.SetFloat("Speed", moveInput.magnitude);
             Anim.SetBool("onGround", canJump);
 
@@ -340,6 +349,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    public IEnumerator MeleeCo()
+    {
+        yield return new WaitForSeconds(0.15f);
+        Anim.SetBool("Fbutton", false);
+    }
+
 
 
 }

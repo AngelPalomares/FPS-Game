@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Screen.cs" />
     <Compile Include="Assets\Scripts\EnemyHealthController.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\TargetMovement.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\AmmoPickup.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\SwordHit.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
