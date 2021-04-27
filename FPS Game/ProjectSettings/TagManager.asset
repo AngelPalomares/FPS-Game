@@ -8,6 +8,7 @@ TagManager:
   - Head
   - NPC2
   - NPC3
+  - Sword
   layers:
   - Default
   - TransparentFX
