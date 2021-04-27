@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
 
             moveInput = HorizontalMove + VerticalMove;
             moveInput.Normalize();
-            walkingsound.Play();
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -97,7 +96,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                walkingsound.Play();
                 moveInput = moveInput * MoveSpeed;
                 Anim.SetFloat("Speed", moveInput.magnitude);
             }
@@ -229,7 +227,6 @@ public class PlayerController : MonoBehaviour
     {
         if (activeGun.CurrentAmmo > 0)
         {
-            BulletSound.Play();
             activeGun.CurrentAmmo--;
             Instantiate(activeGun.Bullet, FirePoint.position, FirePoint.rotation);
 
