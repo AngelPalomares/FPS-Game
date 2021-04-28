@@ -38,11 +38,18 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Enemy" && damageEnemy)
+        if (collision.gameObject.tag == "Enemy" && damageEnemy)
         {
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<EnemyHealthController>().DamageEnemy(damage);
         }
+
+        if (collision.gameObject.tag == "Sword")
+        {
+            collision.gameObject.GetComponent<BreakableObjects>().DamageEnemy(damage);
+        }
+
+
 
         if(collision.gameObject.tag == "Head")
         {
