@@ -220,11 +220,14 @@ public class PlayerController : MonoBehaviour
                 CameraController.instance.ZoomOut();
             }
 
+            /*
+
             if(Input.GetKeyDown(KeyCode.F))
             {
                 Anim.SetBool("Fbutton", true);
                 StartCoroutine(MeleeCo());
             }
+            */
 
             Anim.SetFloat("Speed", moveInput.magnitude);
             Anim.SetBool("onGround", canJump);
@@ -349,12 +352,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    /*
     public IEnumerator MeleeCo()
     {
         yield return new WaitForSeconds(0.15f);
         Anim.SetBool("Fbutton", false);
     }
+    */
 
 
 

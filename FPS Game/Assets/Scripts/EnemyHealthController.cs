@@ -7,6 +7,7 @@ public class EnemyHealthController : MonoBehaviour
 {
     public int currentHealth = 5;
     public AudioSource AudioSFX;
+    public GameObject Prefab;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class EnemyHealthController : MonoBehaviour
         if(currentHealth <= 0)
         {
             AudioSFX.Play();
+            Instantiate(Prefab, transform.position,transform.rotation);
             Destroy(gameObject);
         }
 

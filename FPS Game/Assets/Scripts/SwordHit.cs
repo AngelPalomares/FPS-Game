@@ -21,5 +21,10 @@ public class SwordHit : MonoBehaviour
         {
             Debug.Log("sword Hit");
         }
+
+        if(other.tag == "Player")
+        {
+            Debug.Log("I sense the player");
+        }    
     }
 }
