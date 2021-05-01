@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7447681}
   - component: {fileID: 7447682}
   m_Layer: 0
-  m_Name: WeaponPickup (1)
+  m_Name: MachinGunPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 7447680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57b5ae143085fb645858f5f0c3005d43, type: 2}
+  m_Controller: {fileID: 9100000, guid: d9e06cdd9203324478dbb7adffa52ff8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2362,7 +2362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628771811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.413, z: 1.223}
+  m_LocalPosition: {x: 0, y: -0.32, z: 1.223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1772358390}
@@ -6778,7 +6778,7 @@ GameObject:
   - component: {fileID: 1633652375}
   - component: {fileID: 1633652376}
   m_Layer: 0
-  m_Name: WeaponPickup
+  m_Name: SniperPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6807,7 +6807,7 @@ Animator:
   m_GameObject: {fileID: 1633652374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57b5ae143085fb645858f5f0c3005d43, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b64eace61aa8344a09290da6d285ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8382,8 +8382,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.3403126, z: 1.2}
-  m_Center: {x: 0, y: -0.070156276, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1679150400
 Rigidbody:
   m_ObjectHideFlags: 0

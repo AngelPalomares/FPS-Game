@@ -65,7 +65,7 @@ public class DragObject : MonoBehaviour
     private void OnMouseDown()
     {
         GunDisabled.SetActive(false);
-        GetComponent<BoxCollider>().enabled = false;
+
         GetComponent<Rigidbody>().useGravity = false;
         this.transform.position = TheDest.position;
         this.transform.parent = GameObject.Find("Destination").transform;
@@ -74,7 +74,7 @@ public class DragObject : MonoBehaviour
     private void OnMouseUp()
     {
         GunDisabled.SetActive(true);
-        GetComponent<BoxCollider>().enabled = true;
+
         this.transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true ;
     }
