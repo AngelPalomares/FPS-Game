@@ -13,6 +13,7 @@ public class AmmoPickup : MonoBehaviour
         {
             //give ammo
             PlayerController.instance.activeGun.GetAmmo();
+            AudioManager.instance.PlaySFX(8);
             Destroy(gameObject);
             collected = true;
         }

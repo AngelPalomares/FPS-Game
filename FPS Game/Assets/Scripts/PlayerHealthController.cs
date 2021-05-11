@@ -42,6 +42,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (invicibleCounter <= 0)
         {
+            AudioManager.instance.PlaySFX(12);
             CurrentHealth -= damageamount;
 
             UIController.instance.ShowDamage();
@@ -55,6 +56,8 @@ public class PlayerHealthController : MonoBehaviour
                 GameManager.instance.PlayerDied();
 
                 AudioManager.instance.StopBGM();
+                AudioManager.instance.PlaySFX(11);
+                AudioManager.instance.StopSFX(12);
 
             }
 

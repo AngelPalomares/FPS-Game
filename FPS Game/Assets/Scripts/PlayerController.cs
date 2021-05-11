@@ -125,12 +125,15 @@ public class PlayerController : MonoBehaviour
                 jumpingSound.Play();
                 moveInput.y = JumpPower;
                 CanDoubleJump = true;
+
+                AudioManager.instance.PlaySFX(13);
             }
             else if (CanDoubleJump && Input.GetKeyDown(KeyCode.Space) || CanDoubleJump && Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 jumpingSound.Play();
                 moveInput.y = JumpPower;
                 CanDoubleJump = false;
+                AudioManager.instance.PlaySFX(13);
             }
 
             //allows the character to move by the given values that were set
