@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7447683}
   - component: {fileID: 7447681}
   - component: {fileID: 7447682}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MachinGunPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376710331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.632, y: 1.46, z: 7.775}
+  m_LocalPosition: {x: -3.632, y: 0.499, z: 7.775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1262785211}
@@ -3856,6 +3856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machine Gun Model
       objectReference: {fileID: 0}
+    - target: {fileID: 4187589826811268708, guid: 8434d74bfe32e7548ada570db5295128, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4187589826811268711, guid: 8434d74bfe32e7548ada570db5295128, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3899,6 +3903,10 @@ PrefabInstance:
     - target: {fileID: 4187589826811268711, guid: 8434d74bfe32e7548ada570db5295128, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277272997889317407, guid: 8434d74bfe32e7548ada570db5295128, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8434d74bfe32e7548ada570db5295128, type: 3}
@@ -5583,7 +5591,7 @@ GameObject:
   - component: {fileID: 1350913484}
   - component: {fileID: 1350913483}
   - component: {fileID: 1350913482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5609,7 +5617,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 02d685c72c7350045a0a9442741fa762, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6777,7 +6785,7 @@ GameObject:
   - component: {fileID: 1633652377}
   - component: {fileID: 1633652375}
   - component: {fileID: 1633652376}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SniperPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8364,7 +8372,7 @@ GameObject:
   - component: {fileID: 1679150401}
   - component: {fileID: 1679150400}
   - component: {fileID: 1679150399}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CubeToPressDown
   m_TagString: Sword
   m_Icon: {fileID: 0}
@@ -8422,7 +8430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679150398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8976007, y: 4.176643, z: 34.65846}
+  m_LocalPosition: {x: -1.74, y: 0.54, z: 34.65846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1350913484}
@@ -9202,6 +9210,14 @@ PrefabInstance:
     - target: {fileID: 1431988691348505071, guid: f429e4a888dd91e4e9a524684b1b4d51, type: 3}
       propertyPath: m_Name
       value: Sniper Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505071, guid: f429e4a888dd91e4e9a524684b1b4d51, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989198728988672625, guid: f429e4a888dd91e4e9a524684b1b4d51, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f429e4a888dd91e4e9a524684b1b4d51, type: 3}
