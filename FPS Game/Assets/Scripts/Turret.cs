@@ -9,7 +9,7 @@ public class Turret : MonoBehaviour
     public float rangeToTargetPlayer, TimeBetweenShots = .5f;
     private float ShotCounter;
 
-    public Transform Gun, FirePoint;
+    public Transform Gun, FirePoint,FirePoint2;
 
     public float RotateSpeed = 45f;
 
@@ -30,6 +30,7 @@ public class Turret : MonoBehaviour
             if(ShotCounter <= 0)
             {
                 Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
+                Instantiate(Bullet, FirePoint2.position, FirePoint2.rotation);
                 ShotCounter = TimeBetweenShots;
             }
         }
