@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\New Folder\CheckingSurroundings.cs" />
     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\Testing.cs" />
+    <Compile Include="Assets\Scripts\ActivateCube.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
@@ -83,7 +84,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
     <Compile Include="Assets\Scripts\BreakableObjects.cs" />
-    <Compile Include="Assets\Scripts\ActivateCube.cs" />
+    <Compile Include="Assets\Scripts\Turret.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />

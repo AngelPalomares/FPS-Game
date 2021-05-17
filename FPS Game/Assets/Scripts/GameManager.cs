@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
 
             Time.timeScale = 1f;
 
+            PlayerController.instance.footstepFast.Play();
+            PlayerController.instance.FootstepSlow.Play();
+
         }
         else
         {
@@ -61,7 +64,8 @@ public class GameManager : MonoBehaviour
 
             Time.timeScale = 0f;
 
-
+            PlayerController.instance.footstepFast.Stop();
+            PlayerController.instance.FootstepSlow.Stop();
         }
     }
 

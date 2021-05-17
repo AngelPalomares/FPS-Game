@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     public bool Swingoff;
 
+    public AudioSource footstepFast, FootstepSlow;
+
     private void Awake()
     {
         instance = this;
