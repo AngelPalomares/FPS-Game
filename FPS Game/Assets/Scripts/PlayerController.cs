@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource footstepFast, FootstepSlow;
 
+    private float BounceAmount;
+    private bool Bouncebool;
+
     private void Awake()
     {
         instance = this;
@@ -136,6 +139,14 @@ public class PlayerController : MonoBehaviour
                 moveInput.y = JumpPower;
                 CanDoubleJump = false;
                 AudioManager.instance.PlaySFX(13);
+            }
+
+            if (Bouncebool)
+            {
+                Bouncebool = false;
+                moveInput.y = BounceAmount;
+
+                CanDoubleJump = true;
             }
 
             //allows the character to move by the given values that were set
@@ -356,6 +367,12 @@ public class PlayerController : MonoBehaviour
             SwitchGun();
         }
 
+    }
+
+    public void Bounce(float BounceForce)
+    {
+        BounceAmount = BounceForce;
+        Bouncebool = true;
     }
     /*
     public IEnumerator MeleeCo()

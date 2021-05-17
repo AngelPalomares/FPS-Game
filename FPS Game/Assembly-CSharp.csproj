@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\AmmoPickup.cs" />
     <Compile Include="Assets\Scripts\DragObject.cs" />
+    <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\VictoryScreen.cs" />
     <Compile Include="Assets\Scripts\CameraTesting.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
     <Compile Include="Assets\Scripts\BreakableObjects.cs" />
-    <Compile Include="Assets\Scripts\Turret.cs" />
+    <Compile Include="Assets\Scripts\BouncePad.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
