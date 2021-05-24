@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\CheckPointController.cs" />
     <Compile Include="Assets\Scripts\BreakableObjects.cs" />
     <Compile Include="Assets\Scripts\BouncePad.cs" />
+    <Compile Include="Assets\Scripts\EXPLOSION.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />
