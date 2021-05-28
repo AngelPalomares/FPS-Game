@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource bgm;
+    public AudioSource bgm, LevelVictory;
 
     public AudioSource[] sfx;
 
@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
     public void StopBGM()
     {
         bgm.Stop();
+    }
+
+    public void PlayLevelVictory()
+    {
+        StopBGM();
+        LevelVictory.Play();
     }
 
     public void PlaySFX(int SFXNumber)

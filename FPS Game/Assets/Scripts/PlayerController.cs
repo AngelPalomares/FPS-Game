@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!UIController.instance.PauseScreen.activeInHierarchy)
+        if (!UIController.instance.PauseScreen.activeInHierarchy && !GameManager.instance.levelEnding)
         {
             //store Y Velocity
             float Ystore = moveInput.y;

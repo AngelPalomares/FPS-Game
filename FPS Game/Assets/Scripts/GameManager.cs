@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    [HideInInspector]
+    public bool levelEnding;
+
     private void Awake()
     {
         instance = this;

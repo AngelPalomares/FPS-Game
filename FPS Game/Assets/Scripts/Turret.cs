@@ -24,7 +24,7 @@ public class Turret : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, PlayerController.instance.transform.position)< rangeToTargetPlayer)
         {
-            Gun.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
+            Gun.LookAt(PlayerController.instance.transform.position + new Vector3(0f, -1f, 0f));
 
             ShotCounter -= Time.deltaTime;
             if(ShotCounter <= 0)

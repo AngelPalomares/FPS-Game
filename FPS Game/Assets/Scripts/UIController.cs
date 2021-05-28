@@ -26,6 +26,9 @@ public class UIController : MonoBehaviour
 
     public GameObject PauseScreen;
 
+    public Image BlackScreen;
+    public float FadeSpeed = 1.5f;
+
     private void Awake()
     {
         instance = this;
@@ -43,6 +46,16 @@ public class UIController : MonoBehaviour
         if (DamageEffect.color.a != 0)
         {
             DamageEffect.color = new Color(DamageEffect.color.r, DamageEffect.color.g, DamageEffect.color.b, Mathf.MoveTowards(DamageEffect.color.a, 0f, DamageFadeSpeed * Time.deltaTime));
+        }
+
+        if(!GameManager.instance.levelEnding)
+        {
+            BlackScreen.color = new Color(BlackScreen.color.r, BlackScreen.color.g, BlackScreen.color.b, Mathf.MoveTowards(BlackScreen.color.a, 0f, FadeSpeed * Time.deltaTime));
+
+        }
+        else
+        {
+            BlackScreen.color = new Color(BlackScreen.color.r, BlackScreen.color.g, BlackScreen.color.b, Mathf.MoveTowards(BlackScreen.color.a, 1f, FadeSpeed * Time.deltaTime));
         }
     }
     public void ShowDamage()
