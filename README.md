@@ -1,3 +1,3 @@
 # FPS-Game
-It is a game that I am working on.
+It is an FPS game that I am currently working on.
 Works with latest unity builds.
