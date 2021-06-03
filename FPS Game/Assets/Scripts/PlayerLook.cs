@@ -18,7 +18,7 @@ public class PlayerLook : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToTargetPlayer)
         {
-            transform.LookAt(Target.position);
+            transform.LookAt(PlayerController.instance.transform.position + new Vector3(0f,1.0f,0f));
         }
         else
         {

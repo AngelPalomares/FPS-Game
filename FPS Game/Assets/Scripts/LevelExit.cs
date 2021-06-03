@@ -8,9 +8,6 @@ public class LevelExit : MonoBehaviour
     public string LevelToLoad;
 
     public float WaitToEndLevel;
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +17,7 @@ public class LevelExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,6 +27,7 @@ public class LevelExit : MonoBehaviour
             GameManager.instance.levelEnding = true;
             StartCoroutine(EndLevelCo());
             AudioManager.instance.PlayLevelVictory();
+
         }
     }
 

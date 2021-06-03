@@ -61,14 +61,18 @@ public class DragObject : MonoBehaviour
 
     public Transform TheDest;
     public GameObject GunDisabled;
+    public float rangeToTargetPlayer;
 
     private void OnMouseDown()
     {
-        GunDisabled.SetActive(false);
+        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToTargetPlayer)
+        {
+            GunDisabled.SetActive(false);
 
-        GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = TheDest.position;
-        this.transform.parent = GameObject.Find("Destination").transform;
+            GetComponent<Rigidbody>().useGravity = false;
+            this.transform.position = TheDest.position;
+            this.transform.parent = GameObject.Find("Destination").transform;
+        }
     }
 
     private void OnMouseUp()
