@@ -9,6 +9,10 @@ TagManager:
   - NPC2
   - NPC3
   - Sword
+  - Pistol
+  - MachineGun
+  - Sniper
+  - Rocket
   layers:
   - Default
   - TransparentFX

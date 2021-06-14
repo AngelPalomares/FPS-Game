@@ -65,6 +65,10 @@ public class PlayerController : MonoBehaviour
     private float BounceAmount;
     private bool Bouncebool;
 
+    public Transform Deploy;
+
+    public GameObject BubbleShieldPrfab;
+
     private void Awake()
     {
         instance = this;
@@ -236,6 +240,11 @@ public class PlayerController : MonoBehaviour
                 CameraController.instance.ZoomOut();
             }
 
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                Instantiate(BubbleShieldPrfab, Deploy.position, Deploy.rotation);
+            }
             /*
 
             if(Input.GetKeyDown(KeyCode.F))
@@ -287,18 +296,28 @@ public class PlayerController : MonoBehaviour
             Gun.instance.PistolCrosshair.SetActive(true);
             Gun.instance.MachineGunCrossHair.SetActive(false);
             Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
         }
         else if (currentGun == 1)
         {
             Gun.instance.PistolCrosshair.SetActive(false);
             Gun.instance.MachineGunCrossHair.SetActive(true);
             Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
         }
         else if (currentGun == 2)
         {
             Gun.instance.PistolCrosshair.SetActive(false);
             Gun.instance.MachineGunCrossHair.SetActive(false);
             Gun.instance.SniperCrossHair.SetActive(true);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
+        }
+        else if(currentGun == 3)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(true);
         }
     }
 
@@ -324,18 +343,28 @@ public class PlayerController : MonoBehaviour
             Gun.instance.PistolCrosshair.SetActive(true);
             Gun.instance.MachineGunCrossHair.SetActive(false);
             Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
         }
         else if (currentGun == 1)
         {
             Gun.instance.PistolCrosshair.SetActive(false);
             Gun.instance.MachineGunCrossHair.SetActive(true);
             Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
         }
         else if (currentGun == 2)
         {
             Gun.instance.PistolCrosshair.SetActive(false);
             Gun.instance.MachineGunCrossHair.SetActive(false);
             Gun.instance.SniperCrossHair.SetActive(true);
+            Gun.instance.RocketLauncherCrossHair.SetActive(false);
+        }
+        else if (currentGun == 3)
+        {
+            Gun.instance.PistolCrosshair.SetActive(false);
+            Gun.instance.MachineGunCrossHair.SetActive(false);
+            Gun.instance.SniperCrossHair.SetActive(false);
+            Gun.instance.RocketLauncherCrossHair.SetActive(true);
         }
 
     }
@@ -381,7 +410,5 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("Fbutton", false);
     }
     */
-
-
 
 }

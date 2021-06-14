@@ -29,6 +29,8 @@ public class Gun : MonoBehaviour
 
     public GameObject SniperCrossHair;
 
+    public GameObject RocketLauncherCrossHair;
+
     public string GunName;
 
     private void Awake()
