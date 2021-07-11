@@ -63,6 +63,18 @@ public class DragObject : MonoBehaviour
     public GameObject GunDisabled;
     public float rangeToTargetPlayer;
 
+    public void Update()
+    {
+        if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToTargetPlayer)
+        {
+            GunDisabled.SetActive(false);
+        }
+        else
+        {
+            GunDisabled.SetActive(true);
+        }
+    }
+
     private void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToTargetPlayer)
@@ -77,7 +89,6 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseUp()
     {
-        GunDisabled.SetActive(true);
 
         this.transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true ;

@@ -27,7 +27,7 @@ public class EnemyHealthController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            AudioSFX.Play();
+            AudioManager.instance.PlaySFX(1);
             Destroy(gameObject);
         }
 
@@ -39,7 +39,7 @@ public class EnemyHealthController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            AudioSFX.Play();
+            AudioManager.instance.PlaySFX(1);
             Destroy(gameObject);
         }
     }
