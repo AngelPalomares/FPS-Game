@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
         if(UIController.instance.PauseScreen.activeInHierarchy)
         {
             UIController.instance.PauseScreen.SetActive(false);
+            UIController.instance.LetItPause.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
 

@@ -43,4 +43,9 @@ public class MainMenu : MonoBehaviour
     {
         ActivateOptions.SetActive(false);
     }
+
+    public void Clearsettings()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

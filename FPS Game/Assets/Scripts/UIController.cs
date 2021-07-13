@@ -26,6 +26,8 @@ public class UIController : MonoBehaviour
 
     public GameObject PauseScreen;
 
+    public GameObject LetItPause;
+
     public Image BlackScreen;
     public float FadeSpeed = 1.5f;
 

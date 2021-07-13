@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -14,7 +15,13 @@ public class OptionsMenu : MonoBehaviour
 
     public Text ResolutionLabel;
 
-    public a
+    public AudioMixer themixer;
+
+    public Slider mastSlider, musicSlider, SFXSlider,VoiceSlider;
+
+    public Text MasterLabel, MusicLabel, SFXLabel,VoiceLabel;
+
+
 
     void Start()
     {
@@ -49,6 +56,46 @@ public class OptionsMenu : MonoBehaviour
         {
             ResolutionLabel.text = Screen.width.ToString() + " x " + Screen.height.ToString();
         }
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            themixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume"));
+
+            mastSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+
+            MasterLabel.text = (mastSlider.value + 80).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            themixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+
+            MusicLabel.text = (musicSlider.value + 80).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            themixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+
+            musicSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+
+            SFXLabel.text = (SFXSlider.value + 80).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("VoiceLine"))
+        {
+            themixer.SetFloat("VoiceLine", PlayerPrefs.GetFloat("VoiceLine"));
+
+            musicSlider.value = PlayerPrefs.GetFloat("VoiceLine");
+
+            MusicLabel.text = (musicSlider.value + 80).ToString();
+        }
+
+    }
+
+    void update()
+    {
 
     }
 
@@ -98,6 +145,42 @@ public class OptionsMenu : MonoBehaviour
         //set resolution
 
         Screen.SetResolution(Resolutions[SelectedResolution].Horizontal, Resolutions[SelectedResolution].Vertical, fullscreenTog.isOn);
+    }
+
+    public void SetMasterVol()
+    {
+        MasterLabel.text = (mastSlider.value + 80).ToString();
+
+        themixer.SetFloat("MasterVolume", mastSlider.value);
+
+        PlayerPrefs.SetFloat("MasterVolume", mastSlider.value);
+    }
+
+    public void SetMusicVol()
+    {
+        MusicLabel.text = (musicSlider.value + 80).ToString();
+
+        themixer.SetFloat("MusicVolume", musicSlider.value);
+
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+    }
+
+    public void SetSFXVol()
+    {
+        SFXLabel.text = (SFXSlider.value + 80).ToString();
+
+        themixer.SetFloat("SFXVolume", SFXSlider.value);
+
+        PlayerPrefs.SetFloat("SFXVolume", SFXSlider.value);
+    }
+
+    public void SetVoiceVol()
+    {
+        VoiceLabel.text = (VoiceSlider.value + 80).ToString();
+
+        themixer.SetFloat("VoiceLine", VoiceSlider.value);
+
+        PlayerPrefs.SetFloat("VoiceLine", VoiceSlider.value);
     }
 }
 [System.Serializable]
