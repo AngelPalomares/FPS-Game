@@ -62,7 +62,7 @@ public class OptionsMenu : MonoBehaviour
 
             mastSlider.value = PlayerPrefs.GetFloat("MasterVolume");
 
-            MasterLabel.text = (mastSlider.value + 80).ToString();
+            MasterLabel.text = (mastSlider.value+ 80).ToString();
         }
 
         if (PlayerPrefs.HasKey("MusicVolume"))
@@ -83,20 +83,20 @@ public class OptionsMenu : MonoBehaviour
             SFXLabel.text = (SFXSlider.value + 80).ToString();
         }
 
-        if (PlayerPrefs.HasKey("VoiceLine"))
+        if (PlayerPrefs.HasKey("VoiceLineVolume"))
         {
-            themixer.SetFloat("VoiceLine", PlayerPrefs.GetFloat("VoiceLine"));
+            themixer.SetFloat("VoiceLineVolume", PlayerPrefs.GetFloat("VoiceLineVolume"));
 
-            musicSlider.value = PlayerPrefs.GetFloat("VoiceLine");
+            musicSlider.value = PlayerPrefs.GetFloat("VoiceLineVolume");
 
-            MusicLabel.text = (musicSlider.value + 80).ToString();
+            MusicLabel.text = (musicSlider.value+ 80).ToString();
         }
 
     }
 
     void update()
     {
-
+        PlayerPrefs.Save();
     }
 
     private void Awake()
@@ -154,6 +154,8 @@ public class OptionsMenu : MonoBehaviour
         themixer.SetFloat("MasterVolume", mastSlider.value);
 
         PlayerPrefs.SetFloat("MasterVolume", mastSlider.value);
+
+        PlayerPrefs.Save();
     }
 
     public void SetMusicVol()
@@ -163,6 +165,8 @@ public class OptionsMenu : MonoBehaviour
         themixer.SetFloat("MusicVolume", musicSlider.value);
 
         PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+
+        PlayerPrefs.Save();
     }
 
     public void SetSFXVol()
@@ -172,15 +176,19 @@ public class OptionsMenu : MonoBehaviour
         themixer.SetFloat("SFXVolume", SFXSlider.value);
 
         PlayerPrefs.SetFloat("SFXVolume", SFXSlider.value);
+
+        PlayerPrefs.Save();
     }
 
     public void SetVoiceVol()
     {
         VoiceLabel.text = (VoiceSlider.value + 80).ToString();
 
-        themixer.SetFloat("VoiceLine", VoiceSlider.value);
+        themixer.SetFloat("VoiceLineVolume", VoiceSlider.value);
 
-        PlayerPrefs.SetFloat("VoiceLine", VoiceSlider.value);
+        PlayerPrefs.SetFloat("VoiceLineVolume", VoiceSlider.value);
+
+        PlayerPrefs.Save();
     }
 }
 [System.Serializable]

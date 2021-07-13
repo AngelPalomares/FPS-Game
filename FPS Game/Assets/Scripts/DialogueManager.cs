@@ -17,7 +17,10 @@ public class DialogueManager : MonoBehaviour
     public string[] dialogLines;
     private bool juststarted;
 
+    public AudioSource[] TestingifWorks;
+
     public int currentLine;
+    public int currentVoice;
     private void Awake()
     {
         instance = this;
@@ -39,6 +42,8 @@ public class DialogueManager : MonoBehaviour
                 if (!juststarted)
                 {
                     currentLine++;
+                    currentVoice++;
+
                     if (currentLine >= dialogLines.Length)
                     {
                         DialogBox.SetActive(false);
@@ -47,6 +52,15 @@ public class DialogueManager : MonoBehaviour
                     {
                         CheckName();
                         dialogText.text = dialogLines[currentLine];
+                    }
+
+                    if (currentVoice == 1)
+                    {
+                        ContinuePlayingVoice(currentVoice);
+                    }
+                    else if(currentVoice == 2)
+                    {
+                        ContinuePlayingVoice(currentVoice);
                     }
                 }
                 else
@@ -66,6 +80,22 @@ public class DialogueManager : MonoBehaviour
         dialogText.text = dialogLines[currentLine];
         DialogBox.SetActive(true);
         juststarted = true;
+    }
+
+    public void PlayVoice(AudioSource[]Voice)
+    {
+        TestingifWorks = Voice;
+        currentVoice = 0;
+        TestingifWorks[currentVoice].Stop();
+
+        TestingifWorks[currentVoice].Play();
+
+    }
+
+    public void ContinuePlayingVoice(int c)
+    {
+        TestingifWorks[c].Stop();
+        TestingifWorks[c].Play();
     }
 
     public void CheckName()

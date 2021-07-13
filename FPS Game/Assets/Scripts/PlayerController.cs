@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     //new
     private bool canJump;
 
+    [SerializeField]
     private bool CanDoubleJump;
     public Transform GroundCheckPoint;
     public LayerMask WhatIsGround;
@@ -129,7 +130,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //HandleJumping
-            if (Input.GetKeyDown(KeyCode.Space) && canJump || Input.GetKeyDown(KeyCode.Joystick1Button1) && canJump)
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
                 jumpingSound.Play();
                 moveInput.y = JumpPower;
@@ -137,7 +138,7 @@ public class PlayerController : MonoBehaviour
 
                 AudioManager.instance.PlaySFX(13);
             }
-            else if (CanDoubleJump && Input.GetKeyDown(KeyCode.Space) || CanDoubleJump && Input.GetKeyDown(KeyCode.Joystick1Button1))
+            else if (CanDoubleJump && Input.GetKeyDown(KeyCode.Space))
             {
                 jumpingSound.Play();
                 moveInput.y = JumpPower;

@@ -8,6 +8,7 @@ public class GameDialogue : MonoBehaviour
     public static GameDialogue instance;
 
     public string[] lines;
+    public AudioSource[] Voicelines;
 
     private bool canActivate;
 
@@ -28,6 +29,7 @@ public class GameDialogue : MonoBehaviour
         if(canActivate && Input.GetKeyDown(KeyCode.E) && !DialogueManager.instance.DialogBox.activeInHierarchy)
         {
             DialogueManager.instance.ShowDialog(lines);
+            DialogueManager.instance.PlayVoice(Voicelines);
         }
     }
 
@@ -48,6 +50,5 @@ public class GameDialogue : MonoBehaviour
             canActivate = false;
         }    
     }
-
 
 }
