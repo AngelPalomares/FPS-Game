@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8449681543947102387}
   - component: {fileID: 8449681543947102386}
   - component: {fileID: 8449681543947102381}
-  - component: {fileID: 8449681543947102380}
+  - component: {fileID: 1630039606}
   m_Layer: 10
   m_Name: RocketLauncher
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TheGun: rocket
---- !u!95 &8449681543947102380
+--- !u!95 &1630039606
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ Animator:
   m_GameObject: {fileID: 8449681543947102383}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9e06cdd9203324478dbb7adffa52ff8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5eac88fe3c3f6a14996b0d61be45bd70, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

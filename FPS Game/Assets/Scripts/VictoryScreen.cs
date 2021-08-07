@@ -19,6 +19,7 @@ public class VictoryScreen : MonoBehaviour
     void Start()
     {
         StartCoroutine(ShowObjects());
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame

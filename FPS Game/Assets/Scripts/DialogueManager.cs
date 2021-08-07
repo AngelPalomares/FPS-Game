@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -21,28 +19,33 @@ public class DialogueManager : MonoBehaviour
 
     public int currentLine;
     public int currentVoice;
+    public int onelessvoice;
+
     private void Awake()
     {
         instance = this;
     }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-       
+
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(DialogBox.activeInHierarchy)
+        if (DialogBox.activeInHierarchy)
         {
-            if(Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 Testing.SetActive(false);
+
                 if (!juststarted)
                 {
                     currentLine++;
                     currentVoice++;
+                    onelessvoice = currentVoice - 1;
 
                     if (currentLine >= dialogLines.Length)
                     {
@@ -56,10 +59,12 @@ public class DialogueManager : MonoBehaviour
 
                     if (currentVoice == 1)
                     {
+                        TestingifWorks[onelessvoice].Stop();
                         ContinuePlayingVoice(currentVoice);
                     }
-                    else if(currentVoice == 2)
+                    else if (currentVoice == 2)
                     {
+                        TestingifWorks[onelessvoice].Stop();
                         ContinuePlayingVoice(currentVoice);
                     }
                 }
@@ -67,7 +72,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     juststarted = false;
                 }
-
             }
         }
     }
@@ -82,14 +86,13 @@ public class DialogueManager : MonoBehaviour
         juststarted = true;
     }
 
-    public void PlayVoice(AudioSource[]Voice)
+    public void PlayVoice(AudioSource[] Voice)
     {
         TestingifWorks = Voice;
         currentVoice = 0;
         TestingifWorks[currentVoice].Stop();
 
         TestingifWorks[currentVoice].Play();
-
     }
 
     public void ContinuePlayingVoice(int c)

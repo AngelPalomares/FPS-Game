@@ -8,6 +8,8 @@ public class EnemyHealthController : MonoBehaviour
     public int currentHealth = 5;
     public AudioSource AudioSFX;
 
+    public EnemyController TheEC;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,11 @@ public class EnemyHealthController : MonoBehaviour
     public void DamageEnemy(int DamageAmount)
     {
         currentHealth -= DamageAmount;
+
+        if(TheEC !=null)
+        {
+            TheEC.GetShot();
+        }
 
         if(currentHealth <= 0)
         {

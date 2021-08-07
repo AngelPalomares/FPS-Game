@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
 
     public Animator Anime;
 
+    private bool wasShot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,11 +85,18 @@ public class EnemyController : MonoBehaviour
 
             if(Vector3.Distance(transform.position,targetPoint) > DistanceToLose)
             {
-                chasing = false;
-                TheMesh.destination = startpoint;
+                if (!wasShot)
+                {
+                    chasing = false;
 
-                ChaseCounter = keepChasingTime;
+                    ChaseCounter = keepChasingTime;
+
+                }
             
+            }
+            else
+            {
+                wasShot = false;
             }
 
             if (ShotWaitCounter > 0)
@@ -149,5 +158,12 @@ public class EnemyController : MonoBehaviour
             
 
         }
+    }
+
+    public void GetShot()
+    {
+        wasShot = true;
+
+        chasing = true;
     }
 }

@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject BubbleShieldPrfab;
 
+    public float maxciewangle = 60f;
+
     private void Awake()
     {
         instance = this;
@@ -174,6 +176,15 @@ public class PlayerController : MonoBehaviour
 
             //Moves the camera up and down
             CameraTransform.rotation = Quaternion.Euler(CameraTransform.rotation.eulerAngles + new Vector3(-MouseInput.y, 0f, 0f));
+
+            if (CameraTransform.rotation.eulerAngles.x > maxciewangle && CameraTransform.rotation.eulerAngles.x < 180f)
+            {
+                CameraTransform.rotation = Quaternion.Euler(maxciewangle, CameraTransform.rotation.eulerAngles.y, CameraTransform.rotation.eulerAngles.z);
+            }
+            else if (CameraTransform.rotation.eulerAngles.x > 180f && CameraTransform.rotation.eulerAngles.x < 360f - maxciewangle)
+            {
+                CameraTransform.rotation = Quaternion.Euler(-maxciewangle, CameraTransform.rotation.eulerAngles.y, CameraTransform.rotation.eulerAngles.z);
+            }
 
             MuzzleFlash.SetActive(false);
 
