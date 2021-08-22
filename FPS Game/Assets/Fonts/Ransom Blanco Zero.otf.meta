@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 01105f11464a989429eb04ca7aa6be5c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ransom Blanco Zero
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d207eb17f3878b442aaa85a355055a9b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
