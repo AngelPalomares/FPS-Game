@@ -31,6 +31,8 @@ public class UIController : MonoBehaviour
     public Image BlackScreen;
     public float FadeSpeed = 1.5f;
 
+    public Text BallCollected;
+
     private void Awake()
     {
         instance = this;

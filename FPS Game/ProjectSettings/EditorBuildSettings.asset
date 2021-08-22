@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c375e46327156044baf20a547c345ab9
   - enabled: 1
-    path: Assets/Scenes/Alpha.unity
-    guid: 9a0138db2cd1de2478c7e23192fcd089
-  - enabled: 0
+    path: Assets/Scenes/Dr.Seuss.unity
+    guid: a23e30d1feb04094b954172dd39f4edb
+  - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: 4708978245ecc22478e45521ef58616f
+  - enabled: 0
+    path: Assets/Scenes/Alpha.unity
+    guid: 9a0138db2cd1de2478c7e23192fcd089
   m_configObjects: {}

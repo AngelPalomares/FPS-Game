@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
 
     public float maxciewangle = 60f;
 
+    public int BallGathered = 0;
+
     private void Awake()
     {
         instance = this;
@@ -91,6 +93,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        UIController.instance.BallCollected.text = "Balls: " + BallGathered + ":40";
+
         if (!UIController.instance.PauseScreen.activeInHierarchy && !GameManager.instance.levelEnding)
         {
             //store Y Velocity
@@ -252,11 +256,13 @@ public class PlayerController : MonoBehaviour
                 CameraController.instance.ZoomOut();
             }
 
-
+            //Bubble Shield for future use
+            /*
             if(Input.GetKeyDown(KeyCode.E))
             {
                 Instantiate(BubbleShieldPrfab, Deploy.position, Deploy.rotation);
             }
+            */
             /*
 
             if(Input.GetKeyDown(KeyCode.F))
