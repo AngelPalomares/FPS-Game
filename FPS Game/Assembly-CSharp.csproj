@@ -88,9 +88,11 @@
     <Compile Include="Assets\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\SwordHit.cs" />
+    <Compile Include="Assets\Scripts\EnemyUIController.cs" />
     <Compile Include="Assets\Scripts\Exit.cs" />
     <Compile Include="Assets\Scripts\BubbleShield.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\TurretHealth.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\RespawnEnemies.cs" />
     <Compile Include="Assets\Scripts\FindEnemies.cs" />
     <Compile Include="Assets\Scripts\BouncePad.cs" />
+    <Compile Include="Assets\Scripts\TurretUIController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\FPS Assets\model credits.txt" />

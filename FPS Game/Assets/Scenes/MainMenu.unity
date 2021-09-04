@@ -371,7 +371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Balloon Maze
+  m_Text: Space Shooter
 --- !u!222 &434904979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivateOptions: {fileID: 2115837924}
-  FirstLevel: Dr.Seuss
+  FirstLevel: Level 1
 --- !u!114 &1880513202
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,8 +5,10 @@ using UnityEngine.Audio;
 
 public class EnemyHealthController : MonoBehaviour
 {
+
     public int currentHealth = 5;
-    public AudioSource AudioSFX;
+
+    public int maxhealth;
 
     public EnemyController TheEC;
 
@@ -14,18 +16,19 @@ public class EnemyHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxhealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void DamageEnemy(int DamageAmount)
     {
         currentHealth -= DamageAmount;
+
 
         if(TheEC !=null)
         {
@@ -34,10 +37,8 @@ public class EnemyHealthController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            AudioManager.instance.PlaySFX(1);
             Destroy(gameObject);
         }
-
     }
 
     public void Headshot()
@@ -46,7 +47,6 @@ public class EnemyHealthController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            AudioManager.instance.PlaySFX(1);
             Destroy(gameObject);
         }
     }

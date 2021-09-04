@@ -814,7 +814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thank you very much Kaitlyn, Spenser and Steven for a fantastic summer!
+  m_Text: You have defeated the enmies and saved the world!!
 --- !u!222 &1558189776
 CanvasRenderer:
   m_ObjectHideFlags: 0

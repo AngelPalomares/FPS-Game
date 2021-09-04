@@ -5,7 +5,6 @@ using UnityEngine;
 public class BreakableObjects : MonoBehaviour
 {
     public int currentHealth = 5;
-    public AudioSource AudioSFX;
     public GameObject Prefab;
 
 
@@ -27,7 +26,7 @@ public class BreakableObjects : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            AudioSFX.Play();
+            AudioManager.instance.PlaySFX(0);
             Instantiate(Prefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }

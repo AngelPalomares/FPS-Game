@@ -14,6 +14,8 @@ TagManager:
   - Sniper
   - Rocket
   - Bullet
+  - Ball
+  - Turret
   layers:
   - Default
   - TransparentFX

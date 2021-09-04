@@ -50,6 +50,12 @@ public class BulletController : MonoBehaviour
         }
 
 
+        if(collision.gameObject.tag == "Turret")
+        {
+            collision.gameObject.GetComponent<TurretHealth>().DamageEnemy(damage);
+        }
+
+
 
         if(collision.gameObject.tag == "Head")
         {

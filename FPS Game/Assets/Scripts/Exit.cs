@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
+    public int Ballss;
     public string LevelToLoad;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,11 @@ public class Exit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerController.instance.BallGathered == 40)
+        UIController.instance.BallCollected.text = "Balls: " + PlayerController.instance.BallGathered + ":171";
+
+        Ballss = GameObject.FindGameObjectsWithTag("Ball").Length;
+
+        if(Ballss == 0)
         {
             SceneManager.LoadScene(LevelToLoad);
         }
