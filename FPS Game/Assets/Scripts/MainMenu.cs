@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     private static MainMenu Instance;
     public GameObject ActivateOptions;
     public string FirstLevel;
+    public GameObject ContinueButton;
 
     private void Awake()
     {
@@ -16,6 +17,14 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("CurrentLevel"))
+        {
+            ContinueButton.SetActive(true);
+        }
+        else
+        {
+            ContinueButton.SetActive(false);
+        }
         
     }
 
@@ -24,9 +33,19 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+
+    public void Continue()
+    {
+        if(PlayerPrefs.GetString("CurrentLevel") == "")
+        {
+            ContinueButton.SetActive(false);
+        }
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(FirstLevel);
+        PlayerPrefs.SetString("CurrentLevel", "");
+        PlayerPrefs.SetString(FirstLevel + "_cp", "");
     }
 
     public void QuitGame()
