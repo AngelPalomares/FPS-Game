@@ -62,7 +62,7 @@ public class OptionsMenu : MonoBehaviour
 
             mastSlider.value = PlayerPrefs.GetFloat("MasterVolume");
 
-            MasterLabel.text = (mastSlider.value+ 80).ToString();
+            MasterLabel.text = (mastSlider.value+ 100).ToString();
         }
 
         if (PlayerPrefs.HasKey("MusicVolume"))
@@ -71,7 +71,7 @@ public class OptionsMenu : MonoBehaviour
 
             musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
 
-            MusicLabel.text = (musicSlider.value + 80).ToString();
+            MusicLabel.text = (musicSlider.value + 100).ToString();
         }
 
         if (PlayerPrefs.HasKey("SFXVolume"))
@@ -80,7 +80,7 @@ public class OptionsMenu : MonoBehaviour
 
             musicSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
-            SFXLabel.text = (SFXSlider.value + 80).ToString();
+            SFXLabel.text = (SFXSlider.value + 100).ToString();
         }
 
         if (PlayerPrefs.HasKey("VoiceLineVolume"))
@@ -89,7 +89,7 @@ public class OptionsMenu : MonoBehaviour
 
             musicSlider.value = PlayerPrefs.GetFloat("VoiceLineVolume");
 
-            MusicLabel.text = (musicSlider.value+ 80).ToString();
+            MusicLabel.text = (musicSlider.value+ 100).ToString();
         }
 
     }
@@ -149,7 +149,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetMasterVol()
     {
-        MasterLabel.text = (mastSlider.value + 80).ToString();
+        MasterLabel.text = (mastSlider.value + 100).ToString();
 
         themixer.SetFloat("MasterVolume", mastSlider.value);
 
@@ -160,7 +160,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetMusicVol()
     {
-        MusicLabel.text = (musicSlider.value + 80).ToString();
+        MusicLabel.text = (musicSlider.value + 100).ToString();
 
         themixer.SetFloat("MusicVolume", musicSlider.value);
 
@@ -171,7 +171,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetSFXVol()
     {
-        SFXLabel.text = (SFXSlider.value + 80).ToString();
+        SFXLabel.text = (SFXSlider.value + 100).ToString();
 
         themixer.SetFloat("SFXVolume", SFXSlider.value);
 
@@ -182,7 +182,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVoiceVol()
     {
-        VoiceLabel.text = (VoiceSlider.value + 80).ToString();
+        VoiceLabel.text = (VoiceSlider.value + 100).ToString();
 
         themixer.SetFloat("VoiceLineVolume", VoiceSlider.value);
 

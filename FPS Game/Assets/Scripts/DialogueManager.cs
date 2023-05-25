@@ -57,12 +57,7 @@ public class DialogueManager : MonoBehaviour
                         dialogText.text = dialogLines[currentLine];
                     }
 
-                    if (currentVoice == 1)
-                    {
-                        TestingifWorks[onelessvoice].Stop();
-                        ContinuePlayingVoice(currentVoice);
-                    }
-                    else if (currentVoice == 2)
+                    if (currentVoice == 1 || currentVoice == 2)
                     {
                         TestingifWorks[onelessvoice].Stop();
                         ContinuePlayingVoice(currentVoice);
