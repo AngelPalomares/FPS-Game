@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
 
     public int BallGathered = 0;
 
+    public GameObject ActiveGun;
+
     private void Awake()
     {
         instance = this;
@@ -217,13 +219,15 @@ public class PlayerController : MonoBehaviour
 
             //repeats shots
 
-            if (Input.GetMouseButton(0) && activeGun.CanAutoFire)
-            {
-                if (activeGun.FireCounter <= 0)
+
+                if (Input.GetMouseButton(0) && activeGun.CanAutoFire)
                 {
-                    FireShot();
+                    if (activeGun.FireCounter <= 0)
+                    {
+                        FireShot();
+                    }
                 }
-            }
+
 
             if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
@@ -278,28 +282,25 @@ public class PlayerController : MonoBehaviour
 
     public void FireShot()
     {
-        if (activeGun.CurrentAmmo > 0)
+        if (ActiveGun.gameObject.activeInHierarchy)
         {
-            activeGun.CurrentAmmo--;
-            Instantiate(activeGun.Bullet, FirePoint.position, FirePoint.rotation);
+            if (activeGun.CurrentAmmo > 0)
+            {
+                activeGun.CurrentAmmo--;
+                Instantiate(activeGun.Bullet, FirePoint.position, FirePoint.rotation);
 
-            activeGun.FireCounter = activeGun.FireRate;
-            UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
+                activeGun.FireCounter = activeGun.FireRate;
+                UIController.instance.AmmoText.text = "AMMO: " + activeGun.CurrentAmmo;
 
-            MuzzleFlash.SetActive(true);
+                MuzzleFlash.SetActive(true);
+            }
         }
     }
 
     public void SwitchGun()
     {
         activeGun.gameObject.SetActive(false);
-        currentGun++;
-
-        if(currentGun >= allguns.Count)
-        {
-            currentGun = 0;
-        }
-
+        currentGun = (currentGun + 1) % allguns.Count;
         activeGun = allguns[currentGun];
         activeGun.gameObject.SetActive(true);
 
@@ -307,46 +308,16 @@ public class PlayerController : MonoBehaviour
 
         FirePoint.position = activeGun.FirePoint.position;
 
-        if (currentGun == 0)
-        {
-            Gun.instance.PistolCrosshair.SetActive(true);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if (currentGun == 1)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(true);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if (currentGun == 2)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(true);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if(currentGun == 3)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(true);
-        }
+        Gun.instance.PistolCrosshair.SetActive(currentGun == 0);
+        Gun.instance.MachineGunCrossHair.SetActive(currentGun == 1);
+        Gun.instance.SniperCrossHair.SetActive(currentGun == 2);
+        Gun.instance.RocketLauncherCrossHair.SetActive(currentGun == 3);
     }
 
     public void ReverseSwitchGun()
     {
         activeGun.gameObject.SetActive(false);
-        currentGun--;
-
-        if (currentGun <= -1)
-        {
-            currentGun = allguns.Count - 1;
-        }
-
+        currentGun = (currentGun - 1 + allguns.Count) % allguns.Count;
         activeGun = allguns[currentGun];
         activeGun.gameObject.SetActive(true);
 
@@ -354,35 +325,10 @@ public class PlayerController : MonoBehaviour
 
         FirePoint.position = activeGun.FirePoint.position;
 
-        if (currentGun == 0)
-        {
-            Gun.instance.PistolCrosshair.SetActive(true);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if (currentGun == 1)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(true);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if (currentGun == 2)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(true);
-            Gun.instance.RocketLauncherCrossHair.SetActive(false);
-        }
-        else if (currentGun == 3)
-        {
-            Gun.instance.PistolCrosshair.SetActive(false);
-            Gun.instance.MachineGunCrossHair.SetActive(false);
-            Gun.instance.SniperCrossHair.SetActive(false);
-            Gun.instance.RocketLauncherCrossHair.SetActive(true);
-        }
-
+        Gun.instance.PistolCrosshair.SetActive(currentGun == 0);
+        Gun.instance.MachineGunCrossHair.SetActive(currentGun == 1);
+        Gun.instance.SniperCrossHair.SetActive(currentGun == 2);
+        Gun.instance.RocketLauncherCrossHair.SetActive(currentGun == 3);
     }
 
     public void AddGun(string guntoadd)
